@@ -18,7 +18,7 @@ class CryptoComponent extends Component
         return view('livewire.crypto-component');
     }
 
-    public function getCryptoList()
+    public function getCryptoList(): void
     {
         (new CryptoService())->getAndStoreLatestCryptoData();
     }

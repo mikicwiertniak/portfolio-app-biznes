@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class CryptoAnalytics extends Component
 {
-    private array $cryptoForAnalytics;
+    public array $cryptoForAnalytics;
 
     public function mount(): void
     {

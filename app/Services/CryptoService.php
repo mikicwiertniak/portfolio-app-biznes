@@ -3,8 +3,6 @@
 namespace App\Services;
 
 use App\Http\Controllers\CryptoCurrencyController;
-use App\Models\CryptoCurrencyModel;
-use Carbon\Carbon;
 
 class CryptoService extends ApiConnectionService
 {

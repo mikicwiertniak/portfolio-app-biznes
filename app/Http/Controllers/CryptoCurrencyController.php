@@ -29,6 +29,8 @@ class CryptoCurrencyController extends Controller
                                                   'cmc_rank' => $crypto['cmc_rank'],
                                                   'num_market_pairs' => $crypto['num_market_pairs'],
                                               ]);
+
+            (new CryptoPricesHistoryController())->savePriceHistory($crypto['quote']['USD']['price'], $cryptoModel->id);
             $cryptoModel->cryptoPrices()
                         ->updateOrCreate(['crypto_id' => $cryptoModel->id], [
                             'currency' => 'USD',

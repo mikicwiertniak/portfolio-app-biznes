@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class CryptoCurrencyModel extends Model
@@ -29,5 +30,10 @@ class CryptoCurrencyModel extends Model
     public function cryptoPrices(): HasOne
     {
         return $this->hasOne(CryptoPricesModel::class, 'crypto_id', 'id');
+    }
+
+    public function historyPrices(): HasMany
+    {
+        return $this->hasMany('CryptoPricesHistoryModel', 'crypto_id', 'id');
     }
 }
